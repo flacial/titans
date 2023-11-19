@@ -10,8 +10,8 @@
 
 ## Screenshots
 
-<img src="https://github.com/flacial/titans/blob/main/mockup-1.png" alt="Home screen"/>
-<img src="https://github.com/flacial/titans/blob/main/mockup-2.png" alt="Wisdom card screen"/>
+<img src="https://github.com/flacial/titans/blob/main/public/mockup-1.png" alt="Home screen"/>
+<img src="https://github.com/flacial/titans/blob/main/public/mockup-2.png" alt="Wisdom card screen"/>
 
 ## Getting Started
 
