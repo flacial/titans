@@ -1,47 +1,59 @@
-# Svelte + TS + Vite
+# Wisdom by the Titans
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+<p align="center">
+  <img src="https://github.com/flacial/titans/blob/main/public/favicon.png" alt="Logo">
+</p>
 
-## Recommended IDE Setup
+Titans is a collection of wisdom shared by people I respect and look up to. This web application is developed with Svelte and TypeScript, designed to store and organize the wisdoms I gained from them.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+[![Website Design](https://img.shields.io/badge/Design-Lunacy%20App-blue)](https://lun-eu.icons8.com/d/YX97yJ2KB0Gq3cpVAQZZRQ?page=Yn97yJ2KB0Gq3cpVAQZZRQ&vp=-146,-591,5447,3141)
 
-## Need an official Svelte framework?
+## Screenshots
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+<img src="https://github.com/flacial/titans/blob/main/mockup-1.png" alt="Home screen"/>
+<img src="https://github.com/flacial/titans/blob/main/mockup-2.png" alt="Wisdom card screen"/>
 
-## Technical considerations
+## Getting Started
 
-**Why use this over SvelteKit?**
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+### Prerequisites
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+To run this project, you'll need to have [Bun](https://bun.sh/) installed on your computer.
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+### Installing
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+1. Clone the repository
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `allowJs` in the TS template?**
-
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
 ```
+git clone https://github.com/flacial/titans.git
+```
+
+2. Navigate to the project directory
+
+```
+cd titans
+```
+
+3. Install the dependencies
+
+```
+bun install
+```
+
+4. Start the development server
+
+```
+bun dev
+```
+
+The application will start running at `http://localhost:5173`.
+
+## Built With
+
+- [Svelte](https://svelte.dev/): The web framework used
+- [TypeScript](https://www.typescriptlang.org/): The language used for static typing
+
+## Acknowledgements
+
+- Icons and Illustrations provided by [Icons8](https://icons8.com)
