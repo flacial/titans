@@ -57,3 +57,4 @@ The application will start running at `http://localhost:5173`.
 ## Acknowledgements
 
 - Icons and Illustrations provided by [Icons8](https://icons8.com)
+- README design is highly inspired from [@bryanjenningz](https://github.com/bryanjenningz/japanese-reader) README's design.
