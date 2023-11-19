@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+}
+
+:root {
+  --color-primary: hsl(38, 100%, 96%);
+  --color-secondary: hsl(1, 73%, 45%);
+  --card-bg: hsl(192, 58%, 8%);
+  --color-text: hsl(192, 57%, 49%);
+
+  font-family: 'Space Grotesk', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  --font-min: 16; /* Minimum font size */
+  --font-max: 24; /* Maximum font size */
+  --viewport-min: 320; /* Minimum viewport width */
+  --viewport-max: 1780; /* Maximum viewport width */
+
+  font-size: calc(
+    var(--font-min) * 1px + (var(--font-max) - var(--font-min)) *
+      (
+        (100vw - var(--viewport-min) * 1px) /
+          (var(--viewport-max) - var(--viewport-min))
+      )
+  );
+
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+}
+
+body {
+  background-color: var(--color-secondary);
+  min-height: 100vh;
+}
+
+main {
+  border-block: 24px solid var(--color-primary);
+  border-right: 0.5rem solid var(--color-primary);
+}
+
+@media (max-width: 720px) {
+  body {
+    border: 12px solid var(--color-primary);
+  }
+}
+
+body,
+html,
+main {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-secondary);
+  border-radius: 6px;
+  border: 3px solid var(--color-primary);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+::selection {
+  background-color: #fcc300;
+  color: black;
+}
