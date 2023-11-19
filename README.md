@@ -54,6 +54,11 @@ The application will start running at `http://localhost:5173`.
 - [Svelte](https://svelte.dev/): The web framework used
 - [TypeScript](https://www.typescriptlang.org/): The language used for static typing
 
+# Issues
+
+- Not responsive on mobile devices, yet
+- Filtering doesn't work at all
+
 ## Acknowledgements
 
 - Icons and Illustrations provided by [Icons8](https://icons8.com)
