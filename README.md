@@ -4,7 +4,7 @@
   <img src="https://github.com/flacial/titans/blob/main/public/favicon.png" alt="Logo">
 </p>
 
-Titans is a collection of wisdom shared by people I respect and look up to. This web application is developed with Svelte and TypeScript, designed to store and organize the wisdoms I gained from them.
+[Titans](https://titans.flacial.dev/) is a collection of wisdom shared by people I respect and look up to. This web application is developed with Svelte and TypeScript, designed to store and organize the wisdoms I gained from them.
 
 [![Website Design](https://img.shields.io/badge/Design-Lunacy%20App-blue)](https://lun-eu.icons8.com/d/YX97yJ2KB0Gq3cpVAQZZRQ?page=Yn97yJ2KB0Gq3cpVAQZZRQ&vp=-146,-591,5447,3141)
 
