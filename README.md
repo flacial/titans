@@ -57,7 +57,6 @@ The application will start running at `http://localhost:5173`.
 ## Issues
 
 - Not responsive on mobile devices, yet
-- Filtering doesn't work at all
 
 ## Acknowledgements
 
