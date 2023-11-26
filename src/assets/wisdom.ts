@@ -1,7 +1,9 @@
-enum Titan {
+export enum Titan {
   Jasir = 'Jasir',
-  Song = 'Song',
-  Harry = 'Harry',
+  Amay = 'Amay',
+  // Most of my conversations with Harry are through calls, so I don't have a lot of quotes from him. I'll add more as I get them.
+  // Harry = 'Harry',
+  Bryan = 'Bryan',
 }
 export const titans = Object.freeze(Object.values(Titan))
 
@@ -47,5 +49,85 @@ It can scale down to zero, so while it has a lot higher marginal cost, it's net 
     titan: Titan.Jasir,
     title: 'Jasir on Learning System Design',
     quote: `So I wouldn't say system design is topic one can just learn along side other fundamental cs and computing knowledge, rather something that leverages broad information across various areas, dsa, os, cpu, dbs, distributed computing, and so on, and experience teaches you that best. someone can speed up their rate of knowledge gain by deliberately studying system design resources (like designing data intensive applications, great book), and that will also help, But you'll better understand that material, and better understand the reasons behind doing certain things in particular ways (why use caching, why use queus, why acid matters so on) if you have the necessary foundation. So it is a hard thing to teach in a introductory course, or as part of a curriculum that is teaching you from scratch, like c0d3 or a bootcamp (a bootcamp might teach you docker or k8s but that alone != system design :D), and is knowledge better gained through experience (could be experience shared with you by others) and self study.`,
+  },
+  {
+    titan: Titan.Bryan,
+    title: `Bryan on Tech Debt and Code Maintenance`,
+    quote: `Tech debt is just code that probably needs to change in the future for some reason but I'm putting it off because it's not important enough yet. I think it tends to be stuff that might slow you down a little bit or be slightly annoying.
+It tends to not be a problem until it adds up a lot, then it starts to get really annoying.
+
+A good example of tech debt would be like if you're using TypeScript but then you have some code where you wrote ﻿// @ts-ignore to silence some error that didn't matter much because you just wanted to get stuff done. Sometimes the ﻿// @ts-ignore won't be a problem and it might be fine, but other times it might silence a legitimate error and it might make it so there's a possibility you'll get a runtime error later. If these little things add up a lot, then it gets to the point where you might have a runtime error that TypeScript didn't catch because there were too many parts of your code where you silenced TypeScript.
+
+Or people using the ﻿any type. Or people using some legacy system that is no longer maintained. It's probably easier to use the legacy system, but maybe the legacy system has some security problems so you need to migrate your code to something else so the code doesn't have security problems, that's kind of like tech debt. Or maybe you're writing a quick and dirty project and you just want to get it done, so you don't worry about your code looking nice, that's tech debt.
+
+Tech debt usually allows you to get stuff done quickly now, but it makes it so you have to address these problems in the future.
+    `,
+  },
+  {
+    titan: Titan.Amay,
+    quote: `I hope I'm not offensive here but I sometimes get the feeling you are trying to find answers instead of discovering answers (discovering answers means building your own answer with your own experiences).
+    Every good engineer I respect has their philosophy on what makes a great engineer based on their own experiences.
+
+    So if I were you, I would instead ask myself these questions that you have, form my own ideas on what they are and practice that daily so I can build experience.
+
+    From what I know about you, you have done the following things:
+      1.	Mentored new engineers (Harry)
+      2.	Focus on the students / users of your product and build features to solve the problems that they have.
+      3.	Write docs to help future engineers
+      4.	Improve technology / follow industry best practice
+
+    Some things you haven't done:
+      1.	Set deadlines for yourself, communicate them with the team, and hit the deadlines.
+
+    In any typical company, there would be these 4 things:
+      1.	Mentoring more junior engineers (A junior engineer can also do this. There will always be a new engineer joining your team and you can always train someone newer than you using what you have learned in the company).
+      2.	Building impactful features - Understand users, observe users and identify problems that users have, and help plan features that solves these problems.
+      3.	Improve communication within teams by writing documentation. This helps other engineers understand your project, and in certain cases take over your project easily. When developers don't do this, new teams tend to re-write existing code (because too hard to understand). This happens over and over again.
+      4.	Meeting deadlines: Companies usually have launch data communicated up to VP / CEO. It is important to hit these deadlines. This usually comes at the cost of code quality / improving the existing technology.
+
+    So I've seen engineers who:
+      1.	Believes that Mentoring is the most important trait in an impactful engineer. If you can help 10 juniors become super productive on your team, then you have 10x your team's productivity
+      2.	Believes that building impactful features is the most important (Like Amazon's Customer Obsession).
+      3.	Believes that writing skill is the most important trait in being an impactful engineer. If you can write well, teams communicate better and as a result work effectively together.
+      4.	Believes that meeting deadlines is the most important trait in an impactful engineer. They think that a great engineer is reliable in delivering commitments and you can always rely on them to deliver.
+
+    But this is a broad feature that doesn't only apply to SWE.
+
+    This is wrong. I think you may be thinking like... A good SWE will always use const wherever he/she can <- this is too trivial, it has the flaw of paying attention to the symptom instead of the cause.
+    Instead, I think its important to always relate your code back to philosophy:
+
+    Would an engineer who cares about communication use let when he could be using const?
+    No, because const conveys to any code reader that you don't plan to reassign the variable.
+    Would an engineer who care about communication use forEach when he's actually doing a filter?
+    No, because filter conveys to any code reader that the chunk of code is doing filtering.
+
+    So instead of memorizing the symptoms:
+      1.	I should use const wherever I can
+      2.	I should use filter, map, reduce, find instead of forEach wherever I can
+    ...
+
+    You should decide on a philosophy: I want to be an engineer who communicates well, all the time (This is what I believe in) and apply it to every line of code you write.`,
+    title: 'Amay on What Makes a Great Engineer',
+  },
+  {
+    titan: Titan.Bryan,
+    quote: `I try to treat it like an interview as much as possible, I think that's the best way to do it for me
+
+    I read the prompt, then ask questions the same way I would in an interview
+
+    Then I write out some examples
+
+    State the brute force solution and big-O for time and space
+
+    Talk about ways I can optimize it with data structures or common algorithms
+
+    Once I have the best solution stated, then I write code and talk while I write and state why this solution works so the interviewer understands
+
+    Then I test the code with my examples
+
+    And then I will submit the code
+    
+    If I get stuck on a problem for 20 minutes and I'm not making progress then I look at a solution someone else posted and try to learn from that`,
+    title: 'Bryan on Leetcode and Interview-like Technique',
   },
 ]
