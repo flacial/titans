@@ -46,18 +46,19 @@
     // }
   }
 
-  const quoteToParagraphs = quote.split('\n')
+  $: quoteToParagraphs = quote.split('\n')
 
   onMount(() => {
-    anime({
-      targets: '.crow-image',
-      translateX: ['-50vw', 0],
-      translateY: ['-50vh', 0],
-      rotate: ['-45deg', 0],
-      easing: 'easeInOutQuad',
-      duration: 2000,
-      delay: anime.stagger(300),
-    })
+    // NO MORE CROW ANIMATION PLEASE!
+    // anime({
+    //   targets: '.crow-image',
+    //   translateX: ['-50vw', 0],
+    //   translateY: ['-50vh', 0],
+    //   rotate: ['-45deg', 0],
+    //   easing: 'easeInOutQuad',
+    //   duration: 2000,
+    //   delay: anime.stagger(300),
+    // })
   })
 </script>
 
@@ -119,7 +120,7 @@
           >{title.split(' ')[0]}{' '}{title.split(' ')[1]}</span
         >
         <span class="text-[#FCC300]">
-          {title.slice(9)}
+          {title.slice(8)}
         </span>
       </p>
       <div

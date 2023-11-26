@@ -4,7 +4,7 @@
 
   import anime from 'animejs'
   import { onMount } from 'svelte'
-  import { titans, wisdom } from './assets/wisdom'
+  import { Titan, titans, wisdom } from './assets/wisdom'
   import AsideCard from './lib/AsideCard.svelte'
   import Card from './lib/Card.svelte'
   import giantTortoiseStandingImage from '/illustrations/giant-tortoise-standing.png'
@@ -18,6 +18,14 @@
   let words = title.split(' ')
   let displayUltimateWisdom = false
   let foundWisdom = false
+  let activeView: 'all' | Titan = 'all'
+  $: selectedActiveViewWisdoms = wisdom.filter((w) => {
+    if (activeView === 'all') {
+      return true
+    }
+
+    return w.titan === activeView
+  })
 
   const handleDisplayUltimateWisdom = () => {
     if (!foundWisdom) {
@@ -29,21 +37,6 @@
   onMount(() => {
     splt({
       reveal: true,
-    })
-
-    const animeTitle = anime({
-      targets: '.page-title',
-      translateY: [-300, 10],
-      direction: 'normal',
-      delay: anime.stagger(100),
-      easing: 'easeInOutSine',
-    })
-
-    const animeTurtle = anime({
-      targets: '.turtle-image',
-      translateX: [80, 0],
-      direction: 'normal',
-      easing: 'easeInOutSine',
     })
 
     anime({
@@ -87,9 +80,23 @@
 
 <main class="flex">
   <aside class="px-2 bg-primary min-h-full flex flex-col gap-4">
-    <AsideCard type="all" />
+    <AsideCard
+      {activeView}
+      type="all"
+      onClick={() => {
+        activeView = 'all'
+      }}
+    />
     {#each titans as t, i}
-      <AsideCard type="titan" cardTitle={t} index={i + 1} />
+      <AsideCard
+        {activeView}
+        type="titan"
+        cardTitle={t}
+        index={i + 1}
+        onClick={() => {
+          activeView = t
+        }}
+      />
     {/each}
   </aside>
 
@@ -113,11 +120,10 @@
     <div
       class="z-10 grid grid-cols-1 gap-x-8 gap-y-24 pt-4 px-4 md:pt-11 md:px-11 cards pb-96"
     >
-      {#each wisdom as w, i}
+      {#each selectedActiveViewWisdoms as w, i}
         <Card quote={w.quote} titan={w.titan} index={i} title={w.title} />
       {/each}
     </div>
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <footer
       class="flex justify-center items-center mt-10 relative h-60 overflow-hidden"
     >

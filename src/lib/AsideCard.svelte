@@ -6,7 +6,9 @@
 
   export let type: 'all' | 'titan' = 'titan'
   export let cardTitle = type === 'all' ? 'All' : 'Uverse'
+  export let activeView: string
   export let index = 0
+  export let onClick = () => {}
 
   let image
   let size = 'w-24'
@@ -19,7 +21,7 @@
     alignment = 'bottom-0 right-0'
     opacity = 'opacity-25'
 
-    switch (index % 4) {
+    switch (index % 3) {
       case 1:
         image = seaTurtleTopImage
         size = 'w-[112px]'
@@ -28,7 +30,7 @@
         image = kingPenquinImage
         size = 'w-[75px]'
         break
-      case 3:
+      case 0:
         image = giantOctopusImage
         size = 'w-20'
         break
@@ -40,6 +42,8 @@
       bg: type === 'all' ? 'bg-[#554510]' : 'bg-[#FCC300]',
       textColor: type === 'all' ? 'text-[#FCC300]' : 'text-[#554510]',
       illustration: type === 'all' ? elephantImage : image,
+      grayscale:
+        type === activeView && type !== 'all' ? 'grayscale' : 'hover:grayscale',
     },
     text: {
       index: 'text-base font-bold absolute top-2 left-2 z-10',
@@ -49,7 +53,8 @@
 </script>
 
 <button
-  class={`${styles.card.bg} ${styles.card.textColor} relative p-2 flex items-center justify-center w-44 h-20 focus:outline-dashed focus:outline-dark-blue focus:ring-2 focus:ring-primary focus:ring-opacity-50 hover:grayscale hover:transition aside-card`}
+  class={`${styles.card.bg} ${styles.card.textColor} ${styles.card.grayscale} relative p-2 flex items-center justify-center w-44 h-20 focus:outline-dashed focus:outline-dark-blue focus:ring-2 focus:ring-primary focus:ring-opacity-50 hover:transition aside-card`}
+  on:click={onClick}
 >
   <span class={styles.text.index}>
     {index}.
